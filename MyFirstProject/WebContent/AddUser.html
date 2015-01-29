@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<!-- To demonstrate Use jQuery API instead of Javascript for Web Concepts 
+Exercise (5) , create a separate html page for this.  
+without asp validation
+
+Exercise 7 (JQUERY)
+
+-->
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>New User app</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">'
+	<link rel="stylesheet" type="text/css"
+	href="CSS/Exercise3CSS.css">
+	<style type="text/css">
+		
+		body {
+		background-color: gray;}
+		form#add-new-user label{
+			width: 80px;
+			display: inline-block;
+			margin-right: 10px;
+		}
+		form#add-new-user input{
+			width: 150px;
+			margin-right: 10px;
+		}
+
+		form#add-new-user :required {
+			border-color: #119011;
+			-webkit-box-shadow: 0 0 5px rgba(10, 100, 255, .75);
+			-moz-box-shadow: 0 0 5px rgba(10, 100, 255, .75);
+			-o-box-shadow: 0 0 5px rgba(10, 100, 255, .75);
+			-ms-box-shadow: 0 0 5px rgba(10, 100, 255, .75);
+			box-shadow: 0 0 5px rgba(10, 100, 255, .75);
+		}
+		
+		
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">	
+	function deleteContent(obj) {
+		var retVal = confirm("Do you want to continue ?");
+		if (retVal == true) {
+			var index = obj.parentNode.parentNode.rowIndex;
+			var table = document.getElementById("userData-list");
+			table.deleteRow(index);
+		} else {
+			alert("User does not want to continue!");
+
+		}
+
+	}
+		jQuery(document).on('ready', function() {
+			jQuery('form#add-new-user').bind('submit', function(event){
+				event.preventDefault();
+
+				var tbody = jQuery('#userData-list > tbody');
+				
+				tbody.append('<tr class="seccol" bgcolor="#B22222" style="padding: 2; padding-bottom: 4" ><th class="firstcol" scope="row" style="background-color:' + 
+					'"><input type="button" value = "Delete" onClick="Javacsript:deleteContent(this)"></th><td >' + this['new-user-name'].value +
+					'</td><td>' + this['new-user-lastname'].value + '</td><td>' + this['new-user-privilege'].value + 
+					'</td><td>' + this['new-user-password'].value + '</td><td>' + this['new-user-email'].value + '</td></tr>');				
+				
+				return true;
+			});
+		});
+	</script>	
+</head>
+<body>
+<div id="page">
+
+	<h2 style="color: #191970 " align="left">Task Management System</h2>
+<p>
+		<img src="Images/todo6.png"
+			width="200" height="200" alt="Icons" /><a href="Exercise4.html"
+			target="main"><img
+			src="Images/HomeRed.png"
+			align="right" width="100" height="100" alt="Icons" /></a>
+	</p>
+	<!-- [banner] -->
+	<header id="banner">
+		<hgroup>
+			<h1>NEW USER</h1>
+		</hgroup>		
+	</header>
+	<!-- [content] -->
+	<section id="content">
+		<!-- [userData] -->
+		<article id="to-do">			
+			<section class="new-to-do">			
+				<header>
+				</header>
+				<form id="add-new-user" align="center">
+					<label for="new-user-name">First Name:</label>
+					<input id="new-user-name" name="new-user-name" type="text" required><br/>
+					<br/>
+					<label for="new-user-lastname">Last Name:</label>
+					<input id="new-user-lastname" name="new-user-lastname" type="datetime" >		<br/>			
+					<br/>
+					<label for="new-user-privilege">privilege:</label>
+					<input id="new-user-privilege" name="new-user-privilege" type="number" required min="1" max="5" step="1" value="2"><br/>
+					<br/>
+					<label for="new-user-password">password:</label>
+					<input id="new-user-password" name="new-user-password" type="text" required><br/>
+					<br/>
+					<label for="new-user-email">Email:</label>
+					<input id="new-user-email" name="new-user-email" type="email" multiple><br/>
+					<br />
+					<input type="submit" value="Add new">
+				</form>
+			</section>
+			<section>
+				<header>
+					<h1>List of users</h1>
+				</header>
+				<table table id="userData-list" border="1" cellpadding="2" align="center">
+					<caption>Updated List of Users</caption>
+					<colgroup>
+						<col />
+						<col />
+						<col />
+						<col />
+						<col />
+						<col />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col"></th>
+							<th scope="col">First name</th>
+							<th scope="col">Last Name</th>							
+							<th scope="col">Privilege</th>
+							<th scope="col">password</th>
+							<th scope="col">Email</th>
+						</tr>
+					</thead>
+					<tbody>						
+					</tbody>
+				</table>
+			</section>
+			<footer>
+			</footer>
+		</article>
+		<!-- [/userData] -->		
+	</section>
+	<!-- [/content] -->
+	
+	
+</div>
+<!-- [/page] -->
+</body>
+</html>

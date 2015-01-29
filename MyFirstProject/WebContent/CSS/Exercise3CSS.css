@@ -1,0 +1,74 @@
+@CHARSET "ISO-8859-1";
+h3 {
+	color: red;
+}
+
+body {
+	BODY { background: url(Images/utrack_project.jpg); background-repeat: no-repeat }
+	margin: 5px 5px 5px 5px;
+}
+
+table {
+	padding: 2pt 2pt 2pt 2pt;
+	border: 0 align: center;
+}
+
+.box1 {
+	position: absolute;
+	top: 40%;
+	left: 75%;
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	color: white;
+	z-index: 200;
+}
+
+.box2 {
+	width: 400px;
+	height: 400px;
+	background-color: yellow;
+	z-index: 100;
+}
+
+.box3 {
+	width: 400px;
+	height: 100px;
+	background-color: green;
+	position: absolute;
+	top: 20%;
+	left: 10%;
+	color: white;
+	z-index: 150;
+}
+
+h1 {
+	color: #b22222;
+	font-family: "Book Antiqua", Times;
+	border: thin groove;
+	text-align: center;
+	font-size: 20pt;
+}
+
+
+h2 {
+	color: #b22222;
+	font-family: fantasy, Times;
+	border: hidden;
+	font-size: 20pt;
+}
+
+td {
+	font-family: "Book Antiqua", Times;
+	text-align: margin-left;
+	font-size: 16pt;
+}
+
+.firstcol {
+	background-color: #b22222;
+	align: center
+}
+
+.thirdcol {
+	padding: 5pt background-color: white;
+}

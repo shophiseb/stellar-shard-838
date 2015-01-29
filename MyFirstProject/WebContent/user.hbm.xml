@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.example.myproject.DBUser" table="PERSON">  
+    <id name="userId" column="USERID">  
+       <generator class="increment"></generator>
+    </id>  
+    <property name="password" type="string">
+    <column name="userpassword" not-null="true" />
+    </property> 
+    <property name="privilege" type="int">
+    <column name="userprivilege" />
+    </property> 
+    <property name="firstName">
+    <column name="firstname"/>
+    </property>  
+    <property name="lastName" >
+    <column name="lastname" />
+    </property>  
+    
+    <property name="email">
+    <column name="email"/>
+    </property> 
+            
+  </class>  
+            
+ </hibernate-mapping>  

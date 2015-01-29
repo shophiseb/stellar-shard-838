@@ -1,0 +1,81 @@
+
+<html>
+<head>
+<title>Login</title>
+<style type="text/css" scoped>
+td {
+	text-align: left;
+	font-family: verdana, arial;
+	color: grey;
+	font-size: 1.00em;
+}
+
+input {
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	color: grey;
+	display: inline-block;
+	font-size: 1.00em;
+	padding: 5px;
+	width: 100%;
+}
+
+input[type="button"], input[type="reset"], input[type="submit"] {
+	height: auto;
+	width: auto;
+	float: right;
+	text-align: right;
+	margin-top: 10px;
+	margin-left: 7px;
+}
+
+table.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>
+</head>
+<body>
+	<div style="text-align: center;">
+		<div
+			style="box-sizing: border-box; display: inline-block; width: auto; max-width: 480px; background-color: #FFFFFF; border: 2px solid #0361A8; border-radius: 5px; box-shadow: 0px 0px 8px #0361A8; margin: 50px auto auto;">
+			<div
+				style="background: #B22222; border-radius: 5px 5px 0px 0px; padding: 15px;">
+				<span
+					style="font-family: arial; color: white; font-size: 1.00em; font-weight: bold;">Login</span>
+			</div>
+			<div style="background:; padding: 15px">
+
+				<form action="LoginServlet" method="post">
+				<input type="hidden" name="action" value="login">
+					<input type="hidden" name="hide" value="">
+					<table class='center'>
+						<tr>
+							<td>Name:</td>
+							<td><input type="text" name="name"></td>
+						</tr>
+						<tr>
+							<td>Password:</td>
+							<td><input type="password" name="password"></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td><input type="submit" value="submit"></td>
+						</tr>
+						<tr>
+							<td colspan=2>&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan=2>Login with credentials. You have totally three
+								attempts to login after which the text fields will be disabled</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html> 
